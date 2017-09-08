@@ -13,8 +13,10 @@ function* logout() {
   try {
     yield call(logoutApi);
     yield put({ type: LOGOUT_SUCESS });
-    // 清除本地用户信息
+
+    // 清除本地信息并打开登录页面
     localStorage.clear();
+    window.location.href = '/?#/login';
   } catch (error) {
     notification.error({ message: '退出登录出错', description: '请联系管理员。' });
     // eslint-disable-next-line

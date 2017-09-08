@@ -13,6 +13,7 @@ import rootReducer from './rootReducer';
 import Page from './components/Page';
 import Dashboard from './components/dashboard';
 import LoginPage from './containers/loginPage';
+import UserPage from './containers/userPage';
 import registerServiceWorker from './registerServiceWorker';
 import rootSaga from './rootSaga';
 
@@ -21,6 +22,7 @@ const routes =
     <IndexRedirect to="/app/dashboard/index" />
     <Route path={'app'} component={App}>
       <Route path={'dashboard/index'} component={Dashboard} />
+      <Route path={'user/index'} component={UserPage} />
     </Route>
     <Route path={'login'} component={LoginPage} />
   </Route>);

@@ -32,3 +32,30 @@ open-rest项目的UI样板项目
 - 本项目目标
 
   本项目使用后端API样板项目 [open-rest-es6-boilerplate ](https://github.com/open-node/open-rest-es6-boilerplate) 做为后端API，详细介绍 [open-test](https://github.com/open-node) 项目如何使用，相信在使用过后会对 open-rest 拍手称赞。
+
+
+- 使用方法
+
+  - clone 代码
+    ```
+    https://github.com/Witee/open-rest-ui-boilerplate.git
+
+    ```
+  - 启动
+
+    ```
+    cd open-rest-ui-boilerplate
+
+    npm start
+    ```
+  - 访问
+    ```
+    http://localhost:3000/
+    ```
+
+- 相关图片
+
+  ![首页](https://raw.githubusercontent.com/Witee/statics/master/open-rest-ui-boilerplate/1.png)
+  ![添加用户](https://raw.githubusercontent.com/Witee/statics/master/open-rest-ui-boilerplate/2.png)
+  ![过期提醒](https://raw.githubusercontent.com/Witee/statics/master/open-rest-ui-boilerplate/3.png)
+  ![登录](https://raw.githubusercontent.com/Witee/statics/master/open-rest-ui-boilerplate/4.png)
