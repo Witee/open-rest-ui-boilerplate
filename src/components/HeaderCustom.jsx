@@ -16,7 +16,7 @@ const HeaderCustom = (props) => (
 
       <SubMenu title={<span className="avatar"><img src={avater} alt="头像" /></span>}>
         <MenuItemGroup title={<span><Icon type="setting" /> {props.userName}</span>}>
-          <Menu.Item key="logout"><span onClick={() => { localStorage.clear(); window.location.href = '/?#/login'; }}><Icon type="logout" />退出登录</span></Menu.Item>
+          <Menu.Item key="logout"><span onClick={() => { props.logout(); }}><Icon type="logout" />退出登录</span></Menu.Item>
         </MenuItemGroup>
       </SubMenu>
     </Menu>
@@ -25,6 +25,7 @@ const HeaderCustom = (props) => (
 
 HeaderCustom.propTypes = {
   userName: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default HeaderCustom;

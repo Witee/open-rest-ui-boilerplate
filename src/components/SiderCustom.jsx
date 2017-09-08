@@ -24,6 +24,10 @@ class SiderCustom extends Component {
             <Link to={'/app/dashboard/index'}><Icon type="home" /><span className="nav-text">首页</span></Link>
           </Menu.Item>
 
+          <Menu.Item key="/app/user/index">
+            <Link to={'/app/user/index'}><Icon type="user" /><span className="nav-text">用户管理</span></Link>
+          </Menu.Item>
+
         </Menu>
       </Sider>
     );

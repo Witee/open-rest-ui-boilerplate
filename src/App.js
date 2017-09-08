@@ -6,6 +6,7 @@ import './assets/index.less';
 import SiderCustom from './components/SiderCustom';
 import HeaderCustom from './components/HeaderCustom';
 import { getSelfInfo } from './containers/self/actions';
+import { userLogoutAction } from './containers/logout/actions';
 
 const { Content, Footer } = Layout;
 
@@ -39,7 +40,7 @@ class App extends Component {
       <Layout className="ant-layout-has-sider">
         <SiderCustom />
         <Layout>
-          <HeaderCustom userName={this.props.userName} />
+          <HeaderCustom userName={this.props.userName} logout={this.props.userLogoutAction} />
           <Content style={{ margin: '0 16px', overflow: 'initial' }}>
             {this.props.children}
           </Content>
@@ -58,12 +59,14 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getSelfInfo: () => dispatch(getSelfInfo()),
+  userLogoutAction: () => dispatch(userLogoutAction()),
 });
 
 App.propTypes = {
   userName: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   getSelfInfo: PropTypes.func.isRequired,
+  userLogoutAction: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
