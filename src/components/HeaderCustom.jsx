@@ -8,6 +8,11 @@ const MenuItemGroup = Menu.ItemGroup;
 
 const HeaderCustom = (props) => (
   <Header className="custom-theme" >
+    <Icon
+      className="trigger custom-trigger"
+      type={props.collapsed ? 'menu-unfold' : 'menu-fold'}
+      onClick={props.toggle}
+    />
     <Menu
       mode="horizontal"
       style={{ lineHeight: '64px', float: 'right' }}
@@ -24,6 +29,8 @@ const HeaderCustom = (props) => (
 );
 
 HeaderCustom.propTypes = {
+  collapsed: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
 };

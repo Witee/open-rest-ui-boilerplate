@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import Login from '../../components/login';
 import { handleLoginSubmit } from './actions';
 
-// 启用顶部加载条右侧加载圆圈样式
-nprogress.configure({ showSpinner: true });
-
 class LoginPage extends React.Component {
   onHandleLoginSubmit = (form) => {
     form.validateFields((err, values) => {

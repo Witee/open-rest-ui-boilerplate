@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 const { Sider } = Layout;
 
@@ -15,6 +16,7 @@ class SiderCustom extends Component {
       <Sider
         trigger={null}
         breakpoint="lg"
+        collapsed={this.props.collapsed}
         style={{ overflowY: 'auto' }}
       >
         <div className="logo" />
@@ -33,5 +35,9 @@ class SiderCustom extends Component {
     );
   }
 }
+
+SiderCustom.propTypes = {
+  collapsed: PropTypes.bool.isRequired,
+};
 
 export default SiderCustom;

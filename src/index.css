@@ -3,3 +3,22 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.custom-theme {
+  color: #fff !important;
+}
+.custom-theme .ant-menu {
+  color: #fff !important;
+}
+.custom-theme .ant-menu-item-group-title {
+  color: #fff !important;
+}
+
+.ant-layout-header {
+  padding: 0 !important;
+}
+
+#nprogress .spinner {
+  top: 76px !important;
+  right: 30px !important;
+}
