@@ -19,7 +19,7 @@ class App extends Component {
     // 通过本地是否有 access_token 和 是否过期 expired_at 判断是否需要重新登录
     const accessToken = localStorage.getItem('access_token');
     const expiredAt = localStorage.getItem('expired_at');
-    if (!accessToken || (moment() > moment.unix(expiredAt / 1000))) {
+    if (!accessToken && (moment() > moment.unix(expiredAt / 1000))) {
       // 如果没有信息或accessToken过期，则打开登录页面
       Modal.error({
         title: '登录信息过期',

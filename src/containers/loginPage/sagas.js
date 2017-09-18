@@ -20,7 +20,7 @@ function* login(params) {
     // 登录完成后打开首页
     window.location.href = '/';
   } catch (error) {
-    notification.error({ message: '登录失败', description: '登录出现异常，请联系管理员。' });
+    notification.error({ message: '登录失败', description: '用户名或密码错误' });
     // eslint-disable-next-line
     console.log('error: ', error);
     const { response } = error;
