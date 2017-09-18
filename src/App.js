@@ -10,16 +10,23 @@ import { userLogoutAction } from './containers/logout/actions';
 
 const { Content, Footer } = Layout;
 
-// 全局禁用顶部加载条右侧加载圆圈样式
-nprogress.configure({ showSpinner: false });
-
 class App extends Component {
+  state = {
+    collapsed: false, // 侧边栏是否折叠
+  };
   componentWillMount() {
     nprogress.start();
+    // 判断侧边栏是否折叠
+    const ifCollapsed = JSON.parse(localStorage.getItem('collapsed'));
+    if (ifCollapsed === null) {
+      this.setState({ collapsed: true });
+    } else {
+      this.setState({ collapsed: ifCollapsed });
+    }
     // 通过本地是否有 access_token 和 是否过期 expired_at 判断是否需要重新登录
     const accessToken = localStorage.getItem('access_token');
     const expiredAt = localStorage.getItem('expired_at');
-    if (!accessToken || (moment() > moment.unix(expiredAt / 1000))) {
+    if (!accessToken && (moment() > moment.unix(expiredAt / 1000))) {
       // 如果没有信息或accessToken过期，则打开登录页面
       Modal.error({
         title: '登录信息过期',
@@ -35,12 +42,25 @@ class App extends Component {
   componentDidMount() {
     nprogress.done();
   }
+  // 切换
+  toggle = () => {
+    const ifCollapsed = !this.state.collapsed;
+    this.setState({
+      collapsed: ifCollapsed,
+    });
+    localStorage.setItem('collapsed', ifCollapsed);
+  };
   render() {
     return (
       <Layout className="ant-layout-has-sider">
-        <SiderCustom />
+        <SiderCustom collapsed={this.state.collapsed} />
         <Layout>
-          <HeaderCustom userName={this.props.userName} logout={this.props.userLogoutAction} />
+          <HeaderCustom
+            userName={this.props.userName}
+            toggle={this.toggle}
+            collapsed={this.state.collapsed}
+            logout={this.props.userLogoutAction}
+          />
           <Content style={{ margin: '0 16px', overflow: 'initial' }}>
             {this.props.children}
           </Content>

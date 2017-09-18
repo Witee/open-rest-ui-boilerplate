@@ -3,3 +3,49 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.custom-theme {
+  color: #fff !important;
+}
+.custom-theme .ant-menu {
+  color: #fff !important;
+}
+.custom-theme .ant-menu-item-group-title {
+  color: #fff !important;
+}
+
+.ant-layout-header {
+  padding: 0 !important;
+}
+
+#nprogress .spinner {
+  top: 76px !important;
+  right: 30px !important;
+}
+
+.ant-menu-submenu-horizontal > .ant-menu{
+  width: 120px !important;
+  left: -45px !important;
+}
+
+.ant-menu-dark {
+  background: #2e3d59 !important;
+}
+.ant-layout-sider {
+  background: #2e3d59 !important;
+}
+.ant-menu-dark.ant-menu-horizontal {
+  background: #2e3d59 !important;
+  border-bottom-color: #2e3d59 !important;
+}
+.ant-layout-header {
+  background: #2e3d59 !important;
+}
+.custom-theme {
+  background: #2e3d59 !important;
+  color: #fff !important;
+}
+.custom-theme .ant-menu {
+  background: #2e3d59 !important;
+  color: #fff !important;
+}
