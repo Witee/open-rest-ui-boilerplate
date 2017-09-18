@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
+import logoMini from '../assets/imgs/logo.gif';
+
 const { Sider } = Layout;
 
 class SiderCustom extends Component {
@@ -19,7 +21,14 @@ class SiderCustom extends Component {
         collapsed={this.props.collapsed}
         style={{ overflowY: 'auto' }}
       >
-        <div className="logo" />
+        <div>
+          <a href="/admin">
+            <img src={logoMini} alt="logo" className="logo" />
+            {this.props.collapsed || <span style={{ display: 'inline-block', color: '#fff', fontSize: '18px', position: 'absolute', top: '18px' }}>
+              OPEN-NODE
+            </span>}
+          </a>
+        </div>
         <Menu theme="dark" defaultSelectedKeys={[this.state.currentPath]}>
 
           <Menu.Item key="#/app/dashboard/index">
