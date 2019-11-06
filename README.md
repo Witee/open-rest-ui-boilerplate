@@ -96,7 +96,7 @@ open-rest 项目的 UI 样板项目
     GET /user?name_like=*test*
   ```
 
-* 匹配角色
+  - 匹配角色
 
   > roles: 数据库中字段名为 `role`，可使用 `s` 方式过滤角色中完整包含`admin`或`member`的用户
 
